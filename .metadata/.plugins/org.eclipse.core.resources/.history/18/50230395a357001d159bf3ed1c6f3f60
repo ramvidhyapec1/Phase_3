@@ -1,0 +1,38 @@
+package simplilearn.services;
+
+import java.util.List;
+
+import simplilearn.model.Todo;
+import simplilearn.repository.TodoRepository;
+import simplilearn.repository.TodoRepositoryImpl;
+
+public class TodoServiceImpl implements TodoServices {
+	
+	//depends on TodoRepository
+	private TodoRepository todoRepository= new TodoRepositoryImpl();
+
+	@Override
+	public List<Todo> findAll() {
+		// TODO Auto-generated method stub
+		return todoRepository.findAll();
+	}
+
+	@Override
+	public Todo findById(long theId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo save(Todo theTodo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo deleteById(long theId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

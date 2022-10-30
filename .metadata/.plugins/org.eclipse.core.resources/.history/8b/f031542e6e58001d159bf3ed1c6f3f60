@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmxmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Configure the repository bean id="interface name(1st letter is lower case)"
+	class="fully qualified class name (with the package name) -->
+	<bean id="todoRepository" class="simplilearn.repository.TodorepositoryImpl">
+		<!-- Collaborators and configuration for this bean go here -->
+	</bean>
+	
+	<bean id="todoServices" class="simplilearn.services.TodoServiceImpl">
+	<!-- name will the object under todoServices and ref will be the id of the previous bean -->
+		<property name="todoRepository" ref="todoRepository">
+	</property>
+	
+	</bean>
+</beans>

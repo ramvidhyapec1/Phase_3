@@ -1,0 +1,46 @@
+package simplilearn;
+
+import java.util.Date;
+
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import simplilearn.model.Todo;
+import simplilearn.services.TodoServices;
+import simplilearn.services.TodoServiceImpl;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		//create and configure beans
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		TodoServices theTodoService = new TodoServiceImpl();
+		
+		// find all todo's
+		List<Todo> todosList = theTodoService.findAll();
+		
+		// traverse the list and display the contents
+		todosList.forEach(todo -> System.out.println(todo.getDescription()));
+		
+		//test findById
+				Todo theTodo = theTodoService.findById(1);
+				System.out.println("----------->" +theTodo.getDescription());
+				
+				
+				//test save method
+				Todo saveTodo = theTodoService.save(new Todo(-1, "vinodh", "Learn to skate", new Date(), false));
+				System.out.println("----->" + saveTodo.getDescription());
+				
+				//test deleteById method
+				Todo deleteByIdTodo = theTodoService.deleteById(1);
+				System.out.println("--------------->" + deleteByIdTodo.getId());
+				
+
+				// traverse the list and display the contents
+				todosList.forEach(todo -> System.out.println(todo.getDescription()));
+			}
+
+		}

@@ -1,0 +1,5 @@
+package simplilearn.repository;
+
+public interface TodoRepository {
+
+}
