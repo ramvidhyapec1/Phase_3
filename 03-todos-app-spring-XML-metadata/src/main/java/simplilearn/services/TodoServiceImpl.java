@@ -11,10 +11,14 @@ public class TodoServiceImpl implements TodoService {
 	//depends on 'TodoRepository'
 	private TodoRepository todoRepository;
 	
-	//public void setTodoRepository(TodoRepository todoRepository) {
-		//System.out.println("spring ioc container invoked constructor to assemble 'todoRepository' bean");
-		//this.todoRepository=todoRepository;
-	//}
+	protected TodoServiceImpl() {
+		super();
+	}
+	
+	public void setTodoRepository(TodoRepository todoRepository) {
+		System.out.println("spring ioc container invoked setter to assemble 'todoRepository' bean");
+		this.todoRepository=todoRepository;
+	}
 	
 	public TodoServiceImpl(TodoRepository todoRepository) {
 		super();
