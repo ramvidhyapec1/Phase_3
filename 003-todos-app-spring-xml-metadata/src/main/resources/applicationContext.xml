@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ 	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	 xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+ 	 
+ 	 <!-- Configuring the repository bean id - :interface name with the 1st letter in lower case and in the class give the impl class name (fully qualified class name including package -->
+ 	 <bean id="todoRepository" class="simplilearn.repository.TodoRepositoryImpl">
+ 	 
+ 	 	<!-- Collborators and configuration of the beans go here -->
+ 	 </bean>
+ 	 
+ 	 <!--  
+ 	 <bean id="todoService" class="simplilearn.services.TodoServiceImpl" autowire="byType"/>  This will call the setter method
+ 	 
+ 	 <bean id="todoService" class="simplilearn.services.TodoServiceImpl" autowire="byName" />This will call the setter method -->
+ 	 
+ 	 
+ 	 <bean id="todoService" class="simplilearn.services.TodoServiceImpl" autowire="constructor" /><!-- This will call the constructor method -->
+ 	 	<!-- Comments in here
+ 	 		<constructor-arg name="todoRepository" ref="todoRepository"></constructor-arg>
+ 	 </bean> -->
+</beans>
